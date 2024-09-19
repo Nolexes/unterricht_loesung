@@ -31,14 +31,7 @@ namespace UnterrichtÜbung
                 }
             }
 
-            double sum = 0; // platzhalter für die Summe
-
-            for (int i = 0; i < eingabewerte.Length;i++) //hiermit werden alle Stellen des Arrays wieder durchgegangen 
-            {
-                sum += eingabewerte[i]; // und hiermit wird die Zahl jeweils zur Summe addiert
-            }
-
-            double average = sum / eingabewerte.Length; //Hier berechnen wir den Durchschnitt die Summe aller Zahlen durch die Anzahl der Zahlen im Array
+            double average = eingabewerte.Sum() / eingabewerte.Length; // Rechnung um die Summe aller Zahlen im Array durch die Anzahl der Zahlen im Array zu teilen
 
             Console.WriteLine("Der Durchschnitt ist: " + average);
 
