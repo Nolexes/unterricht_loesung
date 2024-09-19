@@ -11,26 +11,26 @@ namespace UnterrichtÜbung
     {
         public static void Start()
         {
-            double lp = 0;
-            double lr = 0;
+            double lp = 0; //platzhalter für den listenpreis
+            double lr = 0; // platzhalter für den lieferrabatt
 
 
-            bool isValid1 = false;
-            bool isValid2 = false;
+            bool isValid1 = false; //bedingungen für die beiden loops
+            bool isValid2 = false; 
 
 
             while (!isValid1)
             {
-                Console.Write("Gebe den Listenpreis ein: ");
-                string input1text = Console.ReadLine();
+                Console.Write("Gebe den Listenpreis ein: "); //Eingabeaufforderung
+                string input1text = Console.ReadLine(); //Auslesen der Eingabe
 
-                if (double.TryParse(input1text, out lp))
+                if (double.TryParse(input1text, out lp)) //Hier wird Versucht den Input als Double zu konvertieren falls möglich stoppt der Loop falls springen wir zurück zur Eingabeaufforderung
                 {
-                    isValid1 = true;
+                    isValid1 = true; //Stopt den loop
                 }
                 else
                 {
-                    Console.WriteLine("Falsche Eingabe versuche es erneut");
+                    Console.WriteLine("Falsche Eingabe versuche es erneut"); //Falls Eingabe ungültig ist
                 }
             }
 
@@ -39,7 +39,7 @@ namespace UnterrichtÜbung
                 Console.Write("Gebe den Lieferantenrabatt ein: ");
                 string input2text = Console.ReadLine();
 
-                if (double.TryParse(input2text, out lr))
+                if (double.TryParse(input2text, out lr))        //Genau das Gleiche wie oben nochmal in loop form
                 {
                     isValid2 = true;
                 }
@@ -49,7 +49,7 @@ namespace UnterrichtÜbung
                 }
             }
 
-            double endwert = (lp / 100d) * (100d - lr);
+            double endwert = (lp / 100d) * (100d - lr); // Rechnung des Ausgabewertes (Listenpreis/100) * (100-lieferrabatt in prozent)
 
             Console.WriteLine("Der Einkaufspreis beträgt: " +endwert);
         }
